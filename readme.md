@@ -1,19 +1,43 @@
-this project is all about the api creation for expense tracker 
-i have implemented jwt for authentication
+ Expense Tracker API
+This project is focused on building a RESTful Expense Tracker API using Django REST Framework (DRF) with JWT-based authentication.
 
+Authentication
+Implements JWT (JSON Web Tokens) for secure authentication using djangorestframework-simplejwt.
 
-api endpoints
+Users must be authenticated to interact with most endpoints.
 
+Tokens are obtained using the built-in JWT views.
 
-api/expenses/--> for fetching data 
-api/expenses/1--->or any id for retrieving data 
-api/auth/register --> for registration user 
-api/auth/login--> built in login view given by jwt
+Core API Endpoints
+Method	Endpoint	Description
+GET	/api/expenses/	Fetch a paginated list of expenses (2 per page)
+GET	/api/expenses/<id>/	Retrieve a specific expense by ID
+POST	/api/expenses/	Create a new expense
+PUT	/api/expenses/<id>/	Update an existing expense
+DELETE	/api/expenses/<id>/	Delete an expense
+POST	/api/auth/register/	Register a new user
+POST	/api/auth/login/	Obtain JWT access and refresh tokens
 
+Pagination
+Expense list endpoint /api/expenses/ supports pagination.
 
-the pagiantion is of 2 pages
-or,2 responses can be seen in each request(get) for expenses 
+2 results per page are returned by default.
 
+Use query parameters like ?page=2 to navigate pages.
 
+Features Implemented
+User registration (/api/auth/register/)
 
-and i am going to add permsiion based on user in future (specific user)
+JWT login (/api/auth/login/)
+
+Authenticated access to expenses
+
+Pagination on expense listing
+
+Automatically links expenses to the logged-in user
+
+Future Plans
+Implement permission-based access control so users can only update/delete their own expenses.
+
+Add user-specific filters and search.
+

@@ -13,3 +13,7 @@ api/auth/login--> built in login view given by jwt
 
 the pagiantion is of 2 pages
 or,2 responses can be seen in each request(get) for expenses 
+
+
+
+and i am going to add permsiion based on user in future (specific user)

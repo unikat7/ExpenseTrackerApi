@@ -5,12 +5,14 @@ from .models import Expense
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.authentication import SessionAuthentication
 from rest_framework import viewsets
-from rest_framework.permissions import IsAuthenticated
+
 # Create your views here.
 
 
 class ExpenseView(viewsets.ModelViewSet):
+    authentication_classes=[SessionAuthentication]
     permission_classes=[IsAuthenticated]
     queryset=Expense.objects.all()
     serializer_class=ExpenseSerializer
